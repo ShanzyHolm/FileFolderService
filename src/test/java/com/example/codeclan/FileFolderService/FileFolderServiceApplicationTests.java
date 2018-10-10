@@ -1,5 +1,6 @@
 package com.example.codeclan.FileFolderService;
 
+import com.example.codeclan.FileFolderService.models.Folder;
 import com.example.codeclan.FileFolderService.models.User;
 import com.example.codeclan.FileFolderService.repositories.FileRepository;
 import com.example.codeclan.FileFolderService.repositories.FolderRepository;
@@ -30,12 +31,13 @@ public class FileFolderServiceApplicationTests {
 	}
 
 	@Test
-	public  void canCreateUser(){
+	public  void canCreateUserAndFolder(){
 		User lenny = new User("Lenny");
-		userRepository,
-	}
+		userRepository.save(lenny);
 
-	@Test
+        Folder week4 = new Folder("Katas", lenny);
+        folderRepository.save(week4);
+	}
 
 
 }
